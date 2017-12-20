@@ -46,6 +46,6 @@ Wenn mein Programm richtig läuft, solltet Ihr eine Ausgabe in dieser Form sehen
 ```
 
 Es gibt drei Parameter die Ihr ändern müsst, um Euer Tagebuch exportieren zu können:
-- ```-mytb_autoren_id``` Das ist Eure Autoren-ID bei myTagebuch
+- ```-mytb_autoren_id``` Das ist Eure Autoren-ID bei myTagebuch, diese findet Ihr in der URL Eures Tagebuch-Profils
 - ```-mytb_anzahl``` Die Anzahl an Tagebucheinträgen die Ihr exportieren wollt
 - ```-export_datei``` Der Name der Exportdatei
