@@ -114,7 +114,11 @@ public class MyTB2WXR {
         Document doc_liste = Jsoup.connect(mytb_url_liste).get();
 
         Element table_entry = doc_liste.selectFirst("body > table:nth-child(6) > tbody > tr:nth-child(2) > td:nth-child(3) > table:nth-child(2) > tbody > tr.table_entry > td > table > tbody");
-        Elements tb_eintraege = table_entry.getElementsByTag("tr");      
+        
+        if(table_entry == null) break;
+        
+        Elements tb_eintraege = table_entry.getElementsByTag("tr");   
+        
         for (Element tb_eintrag : tb_eintraege) {
           if(j++ >= mytb_entries) break;
           Element datum = tb_eintrag.selectFirst("td:nth-child(1) > i");
