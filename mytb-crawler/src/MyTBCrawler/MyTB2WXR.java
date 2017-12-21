@@ -7,6 +7,7 @@ import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -77,18 +78,21 @@ public class MyTB2WXR {
   public static void main(String[] args) {
     Integer mytb_id;
     Integer mytb_entries;
+    String base64login;
     
     Options options = new Options();
     options.addOption("mytb_autoren_id", true, "myTagebuch Autoren id");
     options.addOption("mytb_anzahl", true, "Anzahl der myTagebuch Eintraege");
-    options.addOption("export_datei", true, "Dateiname des Datenexports");     
+    options.addOption("export_datei", true, "Dateiname des Datenexports");
+    options.addOption("mytb_login", true, "myTagebuch Sicherheitstoken"); 
     
     CommandLineParser parser = new DefaultParser();
     try {
       CommandLine cmd = parser.parse(options, args);
       mytb_id = new Integer(cmd.getOptionValue("mytb_autoren_id"));
       mytb_entries = new Integer(cmd.getOptionValue("mytb_anzahl"));
-
+      base64login = cmd.getOptionValue("mytb_login");
+      
       // myTagebuch URL-Teil fuer den Abruf von Tagebucheintraegen (die EID am Ende wird weiter unten in der Schleife angefuegt)
       String mytb_url_eintrag = new String("http://www.mytagebuch.de/profil.php?action=eintrag&id=" + mytb_id
           + "&eid=");
@@ -111,7 +115,7 @@ public class MyTB2WXR {
             + offset 
             + "&id=" + mytb_id);
 
-        Document doc_liste = Jsoup.connect(mytb_url_liste).get();
+        Document doc_liste = Jsoup.connect(mytb_url_liste).header("Authorization", "Basic " + base64login).get();
 
         Element table_entry = doc_liste.selectFirst("body > table:nth-child(6) > tbody > tr:nth-child(2) > td:nth-child(3) > table:nth-child(2) > tbody > tr.table_entry > td > table > tbody");
         
@@ -133,7 +137,7 @@ public class MyTB2WXR {
 
           System.out.println(j +". " + datum.text() + " - " + linkText);
 
-          Document doc_eintrag = Jsoup.connect(mytb_url_eintrag + eid).get();
+          Document doc_eintrag = Jsoup.connect(mytb_url_eintrag + eid).header("Authorization", "Basic " + base64login).get();
           Element mytb_eintrag = doc_eintrag.select("td.listentextxl").first();   
 
           //System.out.println(mytb_eintrag.html());
