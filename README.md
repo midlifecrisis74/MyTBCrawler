@@ -27,13 +27,13 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.152-b16, mixed mode)
 ## Schritt 3 - Mein Programm
 Danach könnt Ihr mein Export-Programm von dieser Seite herunterladen:
 
-https://github.com/midlifecrisis74/MyTBCrawler/raw/HEAD/mytb2wxr-0.1.jar
+https://github.com/midlifecrisis74/MyTBCrawler/raw/HEAD/mytb2wxr-0.2.jar
 
 Mein Programm mytb2wxr-0.1.jar speichert Ihr am besten in einem leeren Verzeichnis.
 
 Als ersten Text könntet Ihr z.B. die öffentlichen Einträge vom myTagebuch-Team exportieren:
 ```
-"C:\Program Files\Java\jdk1.8.0_152\bin\java.exe" -jar mytb2wxr-0.1.jar -mytb_autoren_id 10877 -mytb_anzahl 10 -export_datei myTagebuch-Team.xml
+"C:\Program Files\Java\jdk1.8.0_152\bin\java.exe" -jar mytb2wxr-0.2.jar -mytb_autoren_id 10877 -mytb_anzahl 10 -export_datei myTagebuch-Team.xml -mytb_login DAS_GEHEIME_LOGIN_TOKEN
 ```
 
 Wenn mein Programm richtig läuft, solltet Ihr eine Ausgabe in dieser Form sehen:
@@ -49,3 +49,4 @@ Es gibt drei Parameter die Ihr ändern müsst, um Euer Tagebuch exportieren zu k
 - ```-mytb_autoren_id``` Das ist Eure Autoren-ID bei myTagebuch, diese findet Ihr in der URL Eures Tagebuch-Profils
 - ```-mytb_anzahl``` Die Anzahl an Tagebucheinträgen die Ihr exportieren wollt
 - ```-export_datei``` Der Name der Exportdatei
+- ```-mytb_login``` Das geheime Login Token, dass leider nur mir bekannten Tagebuchautoren zukommen lasse
