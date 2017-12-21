@@ -27,7 +27,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.152-b16, mixed mode)
 ## Schritt 3 - Mein Programm
 Danach könnt Ihr mein Export-Programm von dieser Seite herunterladen:
 
-https://github.com/midlifecrisis74/MyTBCrawler/raw/HEAD/mytb2wxr-0.2.jar
+https://raw.githubusercontent.com/midlifecrisis74/MyTBCrawler/master/mytb2wxr-0.2.jar
 
 Mein Programm mytb2wxr-0.1.jar speichert Ihr am besten in einem leeren Verzeichnis.
 
