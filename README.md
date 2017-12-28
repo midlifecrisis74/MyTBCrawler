@@ -25,13 +25,14 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.152-b16, mixed mode)
 ```
 
 ## Schritt 3 - Mein Programm
-Danach könnt Ihr mein Export-Programm von dieser Seite herunterladen:
+Danach könnt Ihr mein Export-Programm, in Eurem Web-Browser, von dieser Seite herunterladen:
 
 https://raw.githubusercontent.com/midlifecrisis74/MyTBCrawler/master/mytb2wxr-0.2.jar
 
 Mein Programm mytb2wxr-0.1.jar speichert Ihr am besten in einem leeren Verzeichnis.
+Evtl. müsst Ihr diese Datei zusätzlich noch freigeben, damit es funktioniert: per Rechtsklick -> "Freigeben für..." -> "Bestimmte Personen" -> "%Mein Benutzerkonto".
 
-Als ersten Text könntet Ihr z.B. die öffentlichen Einträge vom myTagebuch-Team exportieren:
+Als ersten Test könntet Ihr z.B. die öffentlichen Einträge vom myTagebuch-Team exportieren, Ihr müsst dazu nicht bei myTagebuch.de angemeldet sein. Das LOGIN_TOKEN enthält das notwendige Passwort für den zusätzlichen Schutz, der kurz vor Weihnachten aktiviert wurde:
 ```
 "C:\Program Files\Java\jdk1.8.0_152\bin\java.exe" -jar mytb2wxr-0.2.jar -mytb_autoren_id 10877 -mytb_anzahl 10 -export_datei myTagebuch-Team.xml -mytb_login DAS_GEHEIME_LOGIN_TOKEN
 ```
